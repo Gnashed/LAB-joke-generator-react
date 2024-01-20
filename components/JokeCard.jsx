@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import PropTypes from 'prop-types';
 
 export default function JokeCard({ joke, btnText }) {
   return (
@@ -8,21 +8,22 @@ export default function JokeCard({ joke, btnText }) {
       <Card.Body>
         <Card.Title style={{ fontSize: '2rem' }}>Joke Generator</Card.Title>
         <Card.Text>
-          Welcome to Joke Generator v2!
+          {joke}
         </Card.Text>
         <Button variant="primary">
-          {/* TODO: Debug. Displays two buttons. 2nd btn works while the 1st doesn't. */}
-          {btnText !== 'Get Punchline' ? joke.punchline : ''}
+          {btnText}
         </Button>
       </Card.Body>
     </Card>
   );
 }
 
+// Note to self - prop validation.
+
 JokeCard.propTypes = {
   joke: PropTypes.shape({
     setup: PropTypes.string,
-    punchline: PropTypes.string,
+    delivery: PropTypes.string,
   }).isRequired,
   btnText: PropTypes.string.isRequired,
 };
