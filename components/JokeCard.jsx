@@ -8,7 +8,7 @@ export default function JokeCard({ joke, btnText }) {
       <Card.Body>
         <Card.Title style={{ fontSize: '2rem' }}>Joke Generator</Card.Title>
         <Card.Text>
-          {joke}
+          {joke.setup}
         </Card.Text>
         <Button variant="primary">
           {btnText}
@@ -23,7 +23,7 @@ export default function JokeCard({ joke, btnText }) {
 JokeCard.propTypes = {
   joke: PropTypes.shape({
     setup: PropTypes.string,
-    delivery: PropTypes.string,
+    punchline: PropTypes.string,
   }).isRequired,
   btnText: PropTypes.string.isRequired,
 };
