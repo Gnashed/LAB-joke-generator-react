@@ -16,8 +16,9 @@ function Home() {
     getJoke().then((obj) => { // obj is the joke data???
       // Updating our setJoke func state from line 8???
       setJoke({
+        // Creating an object?
         setup: obj.setup,
-        delivery: obj.delivery,
+        punchline: obj.delivery,
       });
 
       setBtn('Get Punchline');
@@ -36,6 +37,7 @@ function Home() {
     >
       <JokeCard btnText={btnText} joke={joke} />
 
+      {/* Why is this generating a new button??? */}
       {btnText === 'Get a Joke' || btnText === 'Get a New Joke' ? (
         <Button variant="primary" onClick={getAJoke}>
           {btnText}

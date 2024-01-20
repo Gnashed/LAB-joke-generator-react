@@ -11,7 +11,7 @@ export default function JokeCard({ joke, btnText }) {
           {joke.setup}
         </Card.Text>
         <Button variant="primary">
-          {btnText}
+          {btnText !== 'Get Punchline' ? joke.punchline : ''}
         </Button>
       </Card.Body>
     </Card>
